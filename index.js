@@ -648,7 +648,7 @@ exports.otpauthURL = function otpauthURL (options) {
   }
 
   // convert secret to base32
-  if (encoding !== 'base32') secret = new Buffer(secret, encoding);
+  if (encoding !== 'base32') secret = Buffer.from(secret, encoding);
   if (Buffer.isBuffer(secret)) secret = base32.encode(secret);
 
   // build query while validating
